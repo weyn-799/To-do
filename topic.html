@@ -1,58 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yo-do - To-do</title>
-  <link href="styles.css" rel="stylesheet"/>
-  <style>
-    body { font-family: sans-serif; margin: 0; line-height: 1.6; }
-    header, footer { background: #f3f3f3; padding: 1em; }
-    nav ul { list-style: none; display: flex; gap: 1em; padding: 0; margin: 0; }
-    .skip-link { position: absolute; left: 0; top: -40px; background: #000; color: #fff; padding: 8px; }
-    .skip-link:focus { top: 0; }
-    a:focus, button:focus, input:focus, textarea:focus { outline: 2px solid #007BFF; outline-offset: 2px; }
-    main { padding: 1em; }
-    footer nav a { margin-right: 1em; }
-  </style>
-</head>
-<body>
-  <a href="#main" class="skip-link">Перейти до основного змісту</a>
-
-  <header>
-    <img src="logo.png" alt="">
-    <p>To-do рулить</p>
-    <nav aria-label="Головна навігація">
+  <head>
+    <meta charset="utf-8">
+    <title>Yo-do - To-do</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти до основного змісту</a>
+    <header>
+      <img src="logo.png" alt="Логотип Yo-do" width="40" height="40">
+      <nav aria-label="Головна навігація">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="topic.html">Тема</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <h1>Список завдань</h1>
       <ul>
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="topic.html" aria-current="page">Тема</a></li>
-        <li><a href="contacts.html">Контакти</a></li>
+        <li>роби сьогодні. Заробляй на завтра</li>
+        <!-- другие задачи -->
       </ul>
-    </nav>
-  </header>
-
-  <nav aria-label="Хлібні крихти">
-    <a href="index.html">Головна</a> › <span>Тема</span>
-  </nav>
-
-  <main id="main">
-    <section>
-      <h2>Список завдань</h2>
-      <p>роби сьогодні.Заробляй на завтра</p>
-      <figure>
-        <img src="ai.jpg" alt="">
-        <figcaption>.</figcaption>
-      </figure>
-    </section>
-  </main>
-
-  <footer>
-    <nav aria-label="Навігація в підвалі">
-      <a href="index.html">Головна</a>
-      <a href="policy.html">Політика</a>
-      <a href="contacts.html">Контакти</a>
-    </nav>
-    <p>© 2025 Yo-do.inc</p>
-  </footer>
-</body>
+      <!-- Добавь остальной нужный контент -->
+    </main>
+    <footer>
+      <nav aria-label="Навігація підвалу">
+        <a href="index.html">Головна</a>
+        <a href="policy.html">Політика</a>
+        <a href="contacts.html">Контакти</a>
+      </nav>
+      <span>© 2025 Yo-do.inc</span>
+    </footer>
+  </body>
 </html>
