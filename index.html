@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To-do Manager</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="header">
     <span class="logo">To-do Manager</span>
     <nav class="menu">
-      <a href="#" class="active">Список</a>
-      <a href="#">Додати</a>
-      <a href="#">Статистика</a>
+      <a href="index.html" class="active">Список</a>
+      <a href="topic.html">Додати</a>
+      <a href="contacts.html">Статистика</a>
     </nav>
   </header>
 
@@ -43,34 +43,40 @@
   <!-- Детальна сторінка: наприклад, task.html -->
   <main class="container">
     <section class="details-grid">
-      <img src="todo.png" alt="" style="max-width:140px">
+      <img alt="" style="max-width:140px" />
       <div>
-        <h1>Скласти звіт</h1>
+        <h2>Скласти звіт</h2>
         <ul>
-          <li><b>Категорія:</b> Робота</li>
-          <li><b>Термін:</b> 20.10.2025</li>
-          <li><b>Статус:</b> В процесі</li>
+          <li>Категорія: Робота</li>
+          <li>Термін: 20.10.2025</li>
+          <li>Статус: В процесі</li>
         </ul>
-        <p>Детальний опис завдання — підготувати звіт за минулий тиждень...</p>
-        <a href="index.html" class="button">Назад</a>
+        <p>
+          Детальний опис завдання — підготувати звіт за минулий тиждень...
+        </p>
+        <a class="button" href="index.html">Назад</a>
       </div>
     </section>
   </main>
 
   <main class="container">
-    <h1>Додати завдання</h1>
+    <h2>Додати завдання</h2>
     <form class="form">
       <div class="form-fields">
-        <label>Назва:
-          <input type="text" required>
+        <label>
+          Назва:
+          <input type="text" required />
         </label>
-        <label>Категорія:
-          <input type="text">
+        <label>
+          Категорія:
+          <input type="text" />
         </label>
-        <label>Термін:
-          <input type="date">
+        <label>
+          Термін:
+          <input type="date" />
         </label>
-        <label>Статус:
+        <label>
+          Статус:
           <select>
             <option value="new">Нове</option>
             <option value="in-progress">В процесі</option>
@@ -80,11 +86,10 @@
       </div>
       <textarea placeholder="Деталі, зауваження"></textarea>
       <div class="form-actions">
-        <button type="submit" class="button primary">Зберегти</button>
-        <button type="reset" class="button">Очистити</button>
+        <button class="button primary" type="submit">Зберегти</button>
+        <button class="button" type="reset">Очистити</button>
       </div>
     </form>
   </main>
-
 </body>
 </html>
