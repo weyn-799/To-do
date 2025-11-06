@@ -1,84 +1,73 @@
-const menuBtn = document.querySelector('.menu-toggle');
-const body = document.body;
+// Get form and button elements
+const form = document.querySelector('.form');
+const saveBtn = form.querySelector('button[type="submit"]');
+const resetBtn = form.querySelector('button[type="reset"]');
+const inputs = form.querySelectorAll('input, select, textarea');
+
+// Get task list and modal elements
 const overlay = document.querySelector('.overlay');
+const body = document.body;
 
-function openMenu() {
-  body.classList.add('is-open');
-  menuBtn.textContent = 'Закрити меню';
-  menuBtn.setAttribute('aria-expanded', 'true');
-}
-
-function closeMenu() {
-  body.classList.remove('is-open');
-  menuBtn.textContent = 'Відкрити меню';
-  menuBtn.setAttribute('aria-expanded', 'false');
-}
-
-function toggleMenu() {
-  if (body.classList.contains('is-open')) {
-    closeMenu();
+// Simple form submission handler
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Get form values
+  const formData = new FormData(form);
+  let isValid = true;
+  
+  // Check if required fields are filled
+  inputs.forEach((input) => {
+    if (input.hasAttribute('required') && !input.value.trim()) {
+      isValid = false;
+      input.style.borderColor = 'red';
+    } else {
+      input.style.borderColor = '';
+    }
+  });
+  
+  if (isValid) {
+    // Log form data (for demonstration)
+    console.log('Form submitted successfully!');
+    console.log('Form values:', Object.fromEntries(formData));
+    
+    // Clear form
+    form.reset();
+    
+    // Show success message
+    alert('Завдання додано успішно!');
   } else {
-    openMenu();
-  }
-}
-
-menuBtn.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', closeMenu);
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeMenu();
-
-  if (
-    (e.key === 'Enter' || e.key === ' ' || e.key === 'Space') &&
-    document.activeElement === menuBtn
-  ) {
-    e.preventDefault();
-    toggleMenu();
+    alert('Будь ласка, заповніть всі обов'язкові поля!');
   }
 });
 
-
-const openModalBtn = document.querySelector('.open-modal-btn');
-const modal = document.querySelector('.modal');
-const modalInput = document.querySelector('.task-input');
-const saveBtn = document.querySelector('.save-btn');
-const cancelBtn = document.querySelector('.cancel-btn');
-const errorMsg = document.querySelector('.error');
-const taskList = document.querySelector('.task-list');
-
-function openModal() {
-  modal.classList.add('is-open');
-  body.classList.add('modal-open');
-  modalInput.value = '';
-  errorMsg.hidden = true;
-  setTimeout(() => modalInput.focus(), 50);
-}
-
-function closeModal() {
-  modal.classList.remove('is-open');
-  body.classList.remove('modal-open');
-  openModalBtn.focus();
-}
-
-openModalBtn.addEventListener('click', openModal);
-cancelBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', (e) => {
-  if (e.target.classList.contains('modal')) closeModal();
+// Reset button handler
+resetBtn.addEventListener('click', () => {
+  form.reset();
+  inputs.forEach((input) => {
+    input.style.borderColor = '';
+  });
 });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
+// Detail buttons handler
+const detailButtons = document.querySelectorAll('.button.primary');
+detailButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    // Toggle button color for visual feedback
+    button.style.backgroundColor = button.style.backgroundColor === 'rgb(255, 165, 0)' ? '' : 'rgb(255, 165, 0)';
+    console.log('Кнопка деталі натиснута!');
+  });
 });
 
-saveBtn.addEventListener('click', () => {
-  const value = modalInput.value.trim();
-  if (value) {
-    const li = document.createElement('li');
-    li.textContent = value;
-    taskList.append(li);
-    closeModal();
-  } else {
-    errorMsg.hidden = false;
-    errorMsg.textContent = 'Поле не може бути порожнім';
-  }
+// Navigation menu handler
+const menuItems = document.querySelectorAll('.menu a');
+menuItems.forEach((item) => {
+  item.addEventListener('click', function() {
+    // Remove active class from all items
+    menuItems.forEach((i) => i.classList.remove('active'));
+    // Add active class to clicked item
+    this.classList.add('active');
+  });
 });
+
+console.log('✓✓ JavaScript загружен і працює!');
