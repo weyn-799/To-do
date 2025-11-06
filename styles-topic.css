@@ -1,0 +1,106 @@
+/* Styles for Topic (Додати) Page */
+
+:root {
+  --color-primary: #27ae60;
+  --color-accent: #2ecc71;
+  --color-bg: #ecf0f1;
+  --color-card: #fff;
+  --color-text: #2c3e50;
+  --spacing-s: .85rem;
+  --spacing-m: 1.5rem;
+  --spacing-l: 2.5rem;
+  font-size: 1rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+:focus-visible { outline: 3px solid var(--color-accent); }
+
+img { max-width: 100%; height: auto; border-radius: .4em; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-s);
+  padding: var(--spacing-m);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+header img { max-width: 50px; }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: .35em;
+  padding: .35em 1em;
+  transition: background .17s;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a[aria-current="page"] {
+  background: var(--color-accent);
+  color: #1e5631;
+}
+
+main {
+  max-width: 600px;
+  margin: var(--spacing-l) auto;
+  padding: var(--spacing-m);
+  background: var(--color-card);
+  border-radius: .7em;
+  box-shadow: 0 2px 13px rgba(39,174,96,0.1), 0 1.5px 6px rgba(46,204,113,0.1);
+}
+
+main h1,
+main h2 {
+  color: var(--color-primary);
+  margin-top: 0;
+}
+
+ul { padding-left: 1.5em; }
+
+footer {
+  margin-top: var(--spacing-l);
+  padding: var(--spacing-m);
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+}
+
+footer nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 var(--spacing-s);
+  transition: color .17s;
+}
+
+footer nav a:hover {
+  color: var(--color-accent);
+}
+
+footer span {
+  display: block;
+  margin-top: var(--spacing-s);
+  font-size: 0.9em;
+  opacity: 0.9;
+}
