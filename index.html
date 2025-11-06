@@ -1,96 +1,96 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>To-do Manager</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="header">
-    <span class="logo">To-do Manager</span>
-    <nav class="menu">
-      <a href="index.html" class="active">Список</a>
-      <a href="topic.html">Додати</a>
-      <a href="contacts.html">Контакти</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <span class="logo">To-do Manager</span>
+      <nav class="menu">
+        <a href="index.html" class="active">Список</a>
+        <a href="topic.html">Додати</a>
+        <a href="contacts.html">Контакти</a>
+      </nav>
+    </header>
 
-  <main class="container">
-    <!-- Список завдань -->
-    <section>
-      <h1>Завдання</h1>
-      <div class="card-list">
-        <article class="card">
-          <div>
-            <h2>Скласти звіт</h2>
-            <p>По економіці за тиждень</p>
-          </div>
-          <button class="button primary">Деталі</button>
-        </article>
-        <article class="card">
-          <div>
-            <h2>Пройти тест</h2>
-            <p>З математики, до вечора</p>
-          </div>
-          <button class="button primary">Деталі</button>
-        </article>
-        <!-- Додаткові завдання -->
-      </div>
-    </section>
-  </main>
+    <div class="overlay"></div>
 
-  <!-- Детальна сторінка: наприклад, task.html -->
-  <main class="container">
-    <section class="details-grid">
-      <img alt="" style="max-width:140px" />
-      <div>
-        <h2>Скласти звіт</h2>
-        <ul>
-          <li>Категорія: Робота</li>
-          <li>Термін: 20.10.2025</li>
-          <li>Статус: В процесі</li>
-        </ul>
-        <p>
-          Детальний опис завдання — підготувати звіт за минулий тиждень...
-        </p>
-        <a class="button" href="index.html">Назад</a>
-      </div>
-    </section>
-  </main>
+    <main class="container">
+      <section>
+        <h1>Завдання</h1>
+        <div class="card-list">
+          <article class="card">
+            <div>
+              <h2>Скласти звіт</h2>
+              <p>По економіці за тиждень</p>
+            </div>
+            <button class="button primary">Деталі</button>
+          </article>
+          <article class="card">
+            <div>
+              <h2>Пройти тест</h2>
+              <p>З математики, до вечора</p>
+            </div>
+            <button class="button primary">Деталі</button>
+          </article>
+        </div>
+      </section>
+    </main>
 
-  <main class="container">
-    <h2>Додати завдання</h2>
-    <form class="form">
-      <div class="form-fields">
-        <label>
-          Назва:
-          <input type="text" required />
-        </label>
-        <label>
-          Категорія:
-          <input type="text" />
-        </label>
-        <label>
-          Термін:
-          <input type="date" />
-        </label>
-        <label>
-          Статус:
-          <select>
-            <option value="new">Нове</option>
-            <option value="in-progress">В процесі</option>
-            <option value="done">Завершено</option>
-          </select>
-        </label>
-      </div>
-      <textarea placeholder="Деталі, зауваження"></textarea>
-      <div class="form-actions">
-        <button class="button primary" type="submit">Зберегти</button>
-        <button class="button" type="reset">Очистити</button>
-      </div>
-    </form>
-  </main>
-  <script src="script.js"></script>
-</body>
+    <main class="container">
+      <section class="details-grid">
+        <img alt="" style="max-width: 140px" />
+        <div>
+          <h2>Скласти звіт</h2>
+          <ul>
+            <li>Категорія: Робота</li>
+            <li>Термін: 20.10.2025</li>
+            <li>Статус: В процесі</li>
+          </ul>
+          <p>
+            Детальний опис завдання — підготувати звіт за минулий тиждень...
+          </p>
+          <a class="button" href="index.html">Назад</a>
+        </div>
+      </section>
+    </main>
+
+    <main class="container">
+      <h2>Додати завдання</h2>
+      <form class="form">
+        <div class="form-fields">
+          <label>
+            Назва:
+            <input type="text" required />
+          </label>
+          <label>
+            Категорія:
+            <input type="text" />
+          </label>
+          <label>
+            Термін:
+            <input type="date" />
+          </label>
+          <label>
+            Статус:
+            <select>
+              <option value="new">Нове</option>
+              <option value="in-progress">В процесі</option>
+              <option value="done">Завершено</option>
+            </select>
+          </label>
+        </div>
+        <textarea placeholder="Деталі, зауваження"></textarea>
+        <div class="form-actions">
+          <button class="button primary" type="submit">Зберегти</button>
+          <button class="button" type="reset">Очистити</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
