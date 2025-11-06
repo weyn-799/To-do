@@ -24,7 +24,7 @@ body {
 
 img { max-width: 100%; height: auto; border-radius: .4em; }
 
-.header {
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,13 +33,11 @@ img { max-width: 100%; height: auto; border-radius: .4em; }
   color: #fff;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+header img {
   margin-right: var(--spacing-l);
 }
 
-.menu {
+nav ul {
   display: flex;
   gap: var(--spacing-m);
   list-style: none;
@@ -47,7 +45,7 @@ img { max-width: 100%; height: auto; border-radius: .4em; }
   padding: 0;
 }
 
-.menu a {
+nav a {
   border-radius: 1.5rem;
   padding: 0.6rem 1.2rem;
   color: inherit;
@@ -55,12 +53,12 @@ img { max-width: 100%; height: auto; border-radius: .4em; }
   transition: background-color .2s;
 }
 
-.menu a:hover {
+nav a:hover {
   background-color: var(--color-accent);
   color: #000;
 }
 
-.menu a.active {
+nav a.active {
   background-color: var(--color-accent);
   color: #000;
 }
@@ -85,7 +83,7 @@ main {
   gap: var(--spacing-m);
 }
 
-.button {
+button {
   border-radius: 1.5rem;
   padding: 0.6rem 1.2rem;
   background: var(--color-primary);
@@ -95,7 +93,7 @@ main {
   transition: background-color .2s;
 }
 
-.button:hover {
+button:hover {
   background-color: #1565c0;
 }
 
@@ -121,12 +119,12 @@ section h1 {
 }
 
 @media (max-width: 768px) {
-  .header {
+  header {
     flex-direction: column;
     gap: var(--spacing-m);
   }
 
-  .menu {
+  nav ul {
     flex-wrap: wrap;
     justify-content: center;
   }
