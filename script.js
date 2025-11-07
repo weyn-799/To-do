@@ -37,7 +37,7 @@ form.addEventListener('submit', (e) => {
     // Show success message
     alert('Завдання додано успішно!');
   } else {
-    alert('Будь ласка, заповніть всі обов'язкові поля!');
+    alert('Будь ласка, заповніть всі обов.язкові поля!');
   }
 });
 
